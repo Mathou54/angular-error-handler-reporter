@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>All errors</mat-card-title>
+  <mat-card-content>
+    <mat-table [dataSource]="errors">
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+        <mat-cell *matCellDef="let error">{{error.date | date:'short'}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="text">
+        <mat-header-cell *matHeaderCellDef>Error</mat-header-cell>
+        <mat-cell *matCellDef="let error">{{error.text}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="errorsRowDef"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: errorsRowDef;"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>
