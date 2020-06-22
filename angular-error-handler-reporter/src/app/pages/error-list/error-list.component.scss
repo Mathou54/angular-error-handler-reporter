@@ -1,3 +1,22 @@
 mat-table, table, tr {
   width: 100%;
 }
+
+.detail-row {
+  height: 0;
+  min-height: 0;
+}
+.detail-row-expanded {
+  height: fit-content;
+  min-height: fit-content;
+}
+.error-row {
+  cursor: pointer;
+  mat-cell {
+    border-bottom-width: 0;
+  }
+}
+.stack {
+  overflow: hidden;
+  display: flex;
+}

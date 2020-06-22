@@ -8,9 +8,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {AngularFireModule} from '@angular/fire';
 
-import {AppRoutingModule} from './app-routing.module';
-
 import {environment} from '../environments/environment';
+
+import {AppRoutingModule} from './app-routing.module';
 import {CustomErrorHandler} from './config/custom-error-handler';
 import {AppComponent} from './app.component';
 import {ErrorListComponent} from './pages/error-list/error-list.component';

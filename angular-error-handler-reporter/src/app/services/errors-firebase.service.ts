@@ -16,12 +16,12 @@ export class ErrorsFirebaseService {
   }
 
   public add(error: Error): Promise<DocumentReference> {
-    return this.angularFirestore.collection(ErrorsFirebaseService.TABLE)
+    return this.angularFirestore.collection<Error>(ErrorsFirebaseService.TABLE)
       .add(error);
   }
 
-  public getAll(): Observable<QuerySnapshot<DocumentData>> {
-    return this.angularFirestore.collection(ErrorsFirebaseService.TABLE)
-      .get();
+  public getAll(): Observable<Error[]> {
+    return this.angularFirestore.collection<Error>(ErrorsFirebaseService.TABLE)
+      .valueChanges();
   }
 }
