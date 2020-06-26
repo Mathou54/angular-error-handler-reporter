@@ -1,13 +1,22 @@
 import {TestBed} from '@angular/core/testing';
+import {ErrorsFirebaseService} from './errors-firebase.service';
+import {AngularFirestore} from '@angular/fire/firestore';
 
-import {FirebaseService} from './errors-firebase.service';
 
-describe('FirebaseService', () => {
-  let service: FirebaseService;
+describe('ErrorsFirebaseService', () => {
+  let mockAngularFirestore: AngularFirestore;
+
+  let service: ErrorsFirebaseService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(FirebaseService);
+    mockAngularFirestore = jasmine.createSpyObj('AngularFirestore', ['collection']);
+
+    TestBed.configureTestingModule({
+      providers: [
+        {provide: AngularFirestore, useValue: mockAngularFirestore}
+      ]
+    });
+    service = TestBed.inject(ErrorsFirebaseService);
   });
 
   it('should be created', () => {
