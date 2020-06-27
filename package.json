@@ -4,12 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build -- --prod=true",
+    "build": "ng build --prod=true",
     "build:dev": "ng build",
-    "test": "ng test -- --watch=false",
+    "test": "ng test --watch=false",
     "test:dev": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "canICommit": "npm run lint && npm run build && npm run test && npm run e2e && npm run ng -- make-this-awesome",
+    "firebase": "firebase",
+    "deploy": "firebase deploy"
   },
   "private": true,
   "dependencies": {

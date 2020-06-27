@@ -1,9 +1,9 @@
 # Angular Error Handler Reporter
 
-This project proposes an implementation to keep track of frontend errors by saving them into a database.
+This project proposes an implementation to keep track of angular errors by saving them into a database.
 
 ## Live example
-TODO
+https://angular-error-handler-reporter.web.app
 
 ## Error handler
 
