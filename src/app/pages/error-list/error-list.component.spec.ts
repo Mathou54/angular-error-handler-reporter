@@ -4,31 +4,31 @@ import {ErrorListComponent} from './error-list.component';
 import {ErrorsFirebaseService} from '../../services/errors-firebase.service';
 
 describe('ErrorListComponent', () => {
-  let mockErrorsFirebaseService: ErrorsFirebaseService;
+	let mockErrorsFirebaseService: ErrorsFirebaseService;
 
-  let component: ErrorListComponent;
-  let fixture: ComponentFixture<ErrorListComponent>;
+	let component: ErrorListComponent;
+	let fixture: ComponentFixture<ErrorListComponent>;
 
-  beforeEach(async(() => {
-    mockErrorsFirebaseService = jasmine.createSpyObj('ErrorsFirebaseService', ['getAll']);
+	beforeEach(async(() => {
+		mockErrorsFirebaseService = jasmine.createSpyObj('ErrorsFirebaseService', ['getAll']);
 
-    TestBed.configureTestingModule({
-      providers: [
-        {provide: ErrorsFirebaseService, useValue: mockErrorsFirebaseService}
-      ],
+		TestBed.configureTestingModule({
+			providers: [
+				{provide: ErrorsFirebaseService, useValue: mockErrorsFirebaseService}
+			],
 
-      declarations: [ErrorListComponent]
-    })
-      .compileComponents();
-  }));
+			declarations: [ErrorListComponent]
+		})
+			.compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ErrorListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(ErrorListComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });

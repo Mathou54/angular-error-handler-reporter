@@ -16,29 +16,29 @@ import {AppComponent} from './app.component';
 import {ErrorListComponent} from './pages/error-list/error-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ErrorListComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
+	declarations: [
+		AppComponent,
+		ErrorListComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
 
-    // Firebase
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    BrowserAnimationsModule,
+		// Firebase
+		AngularFireModule.initializeApp(environment.firebase),
+		AngularFirestoreModule,
+		BrowserAnimationsModule,
 
-    // Material
-    MatCardModule,
-    MatListModule,
-    MatTableModule,
-    MatToolbarModule,
-  ],
-  providers: [
-    {provide: ErrorHandler, useClass: CustomErrorHandler}
-  ],
-  bootstrap: [AppComponent]
+		// Material
+		MatCardModule,
+		MatListModule,
+		MatTableModule,
+		MatToolbarModule,
+	],
+	providers: [
+		{provide: ErrorHandler, useClass: CustomErrorHandler}
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule {
 }
