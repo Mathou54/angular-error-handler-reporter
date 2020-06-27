@@ -6,6 +6,10 @@ export class AppPage {
   }
 
   getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+    return element(by.css('app-root header nav mat-toolbar .title')).getText() as Promise<string>;
+  }
+
+  getCardTitleText() {
+    return element(by.css('app-root section mat-card-title')).getText() as Promise<string>;
   }
 }

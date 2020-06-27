@@ -3,7 +3,7 @@ export class Error {
   public text: string;
   public stack: string;
 
-  public constructor(date: string = undefined, text: string = undefined, stack: string = undefined) {
+  public constructor(date?: string, text?: string, stack?: string) {
     this.date = date;
     this.text = text;
     this.stack = stack;

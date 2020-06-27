@@ -4,7 +4,7 @@ import {ErrorListComponent} from './error-list.component';
 import {ErrorsFirebaseService} from '../../services/errors-firebase.service';
 
 describe('ErrorListComponent', () => {
-  let mockErrorsFirebaseService : ErrorsFirebaseService;
+  let mockErrorsFirebaseService: ErrorsFirebaseService;
 
   let component: ErrorListComponent;
   let fixture: ComponentFixture<ErrorListComponent>;

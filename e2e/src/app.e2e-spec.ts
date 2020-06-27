@@ -8,9 +8,14 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display the title', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('angular-error-handler-reporter app is running!');
+    expect(page.getTitleText()).toEqual('Angular error handler reporter');
+  });
+
+  it('should have the list of errors as default page', () => {
+    page.navigateTo();
+    expect(page.getCardTitleText()).toEqual('All errors');
   });
 
   afterEach(async () => {

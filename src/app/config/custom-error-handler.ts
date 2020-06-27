@@ -25,7 +25,7 @@ export class CustomErrorHandler extends ErrorHandler {
       stack: error.stack
     };
 
-    if(this.doNotContainError(newError, this.sessionErrors)) {
+    if (this.doNotContainError(newError, this.sessionErrors)) {
       this.errorsFirebaseService.add(newError);
       this.sessionErrors.push(newError);
     }
@@ -33,7 +33,7 @@ export class CustomErrorHandler extends ErrorHandler {
 
   private doNotContainError(newError: Error, sessionErrors: Error[]): boolean {
     return sessionErrors.map(value => value.stack)
-      .filter(value => value == newError.stack)
+      .filter(value => value === newError.stack)
       .length <= 0;
   }
 }

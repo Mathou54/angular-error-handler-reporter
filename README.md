@@ -1,5 +1,7 @@
 # Angular Error Handler Reporter
 
+![Node CI](https://github.com/Mathou54/angular-error-handler-reporter/workflows/Node%20CI/badge.svg)
+
 This project proposes an implementation to keep track of angular errors by saving them into a database.
 
 ## Live example
