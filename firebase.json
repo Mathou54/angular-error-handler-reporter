@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/angular-error-handler-reporter",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

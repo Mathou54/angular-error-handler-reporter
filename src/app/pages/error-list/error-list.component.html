@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>All errors</mat-card-title>
+  <mat-card-content>
+    <mat-table [dataSource]="errors | async" multiTemplateDataRows>
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+        <mat-cell *matCellDef="let error">{{error.date | date:'short'}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="text">
+        <mat-header-cell *matHeaderCellDef>Error</mat-header-cell>
+        <mat-cell *matCellDef="let error">{{error.text}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="stack">
+        <mat-cell *matCellDef="let error"
+                  [attr.colspan]="errorsRowDef.length"
+                  [@detailExpand]="error == expandedError ? 'expanded' : 'collapsed'"
+                  class="stack">
+          <pre class="stack-text">{{error.stack}}</pre>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="errorsRowDef"></mat-header-row>
+      <mat-row (click)="expandedError = expandedError === row ? null : row"
+               *matRowDef="let row; columns: errorsRowDef;"
+               class="error-row"
+               [class.error-row-expanded]="expandedError === row"></mat-row>
+      <mat-row *matRowDef="let row; columns: ['stack'];"
+               [class.detail-row-expanded]="expandedError === row"
+               class="detail-row"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>
