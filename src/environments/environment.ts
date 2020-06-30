@@ -11,6 +11,8 @@ export const environment = {
 		projectId: 'angular-error-handler-reporter',
 		storageBucket: 'angular-error-handler-reporter.appspot.com',
 		messagingSenderId: '973466537291',
+		appId: '1:973466537291:web:93c54a7fd16825ec322cce',
+		measurementId: 'G-CQ562G0ME4'
 	}
 };
 

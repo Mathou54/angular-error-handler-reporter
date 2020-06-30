@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import * as firebase from 'firebase/app';
+import 'firebase/analytics';
 
 @Component({
 	selector: 'app-root',
@@ -8,6 +10,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
 
 	constructor() {
+		firebase.analytics().logEvent('application_start');
 	}
 
 
