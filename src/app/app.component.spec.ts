@@ -1,15 +1,16 @@
 import {async, TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
+import * as firebase from 'firebase';
 import {AppComponent} from './app.component';
-import {initializeTestApp} from '@firebase/testing';
 
 describe('AppComponent', () => {
 	beforeEach(async(() => {
-		// initializeTestApp({ projectId: 'test'});
-		// window.firebase = {
-		// 	analytics: jasmine.createSpyObj('firebase.analytics.Analytics', ['logEvent'])
-		// };
-		spyOn(window.firebase.analytics, 'logEvent');
+		firebase.initializeApp({
+			projectId: 'test-projectId',
+			apiKey: 'test-apiKey',
+			appId: 'test-appId',
+			measurementId: 'test-measurementId'
+		});
 
 		TestBed.configureTestingModule({
 			imports: [
