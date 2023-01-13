@@ -125,6 +125,5 @@
 				}
 			}
 		}
-	},
-	"defaultProject": "angular-error-handler-reporter"
+  }
 }
