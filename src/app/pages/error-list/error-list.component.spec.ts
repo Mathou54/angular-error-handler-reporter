@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {ErrorListComponent} from './error-list.component';
 import {ErrorsFirebaseService} from '../../services/errors-firebase.service';
@@ -9,7 +9,7 @@ describe('ErrorListComponent', () => {
 	let component: ErrorListComponent;
 	let fixture: ComponentFixture<ErrorListComponent>;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		mockErrorsFirebaseService = jasmine.createSpyObj('ErrorsFirebaseService', ['getAll']);
 
 		TestBed.configureTestingModule({
