@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import * as firebase from 'firebase/app';
-import 'firebase/analytics';
+import {AngularFireAnalytics} from '@angular/fire/compat/analytics';
 
 @Component({
 	selector: 'app-root',
@@ -9,13 +8,15 @@ import 'firebase/analytics';
 })
 export class AppComponent {
 
-	constructor() {
-		firebase.analytics().logEvent('application_start');
+	constructor(private analytics: AngularFireAnalytics) {
+		this.analytics.logEvent('application_start');
 	}
 
 
 	public makeAnError(): void {
+		/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 		// @ts-ignore
 		const errorVariable = undefined.crash;
+		console.log(errorVariable);
 	}
 }

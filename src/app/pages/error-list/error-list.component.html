@@ -14,7 +14,7 @@
       <ng-container matColumnDef="stack">
         <mat-cell *matCellDef="let error"
                   [attr.colspan]="errorsRowDef.length"
-                  [@detailExpand]="error == expandedError ? 'expanded' : 'collapsed'"
+                  [@detailExpand]="error === expandedError ? 'expanded' : 'collapsed'"
                   class="stack">
           <pre class="stack-text">{{error.stack}}</pre>
         </mat-cell>
