@@ -2,9 +2,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatListModule} from '@angular/material/list';
-import {MatTableModule} from '@angular/material/table';
+import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
+import {MatLegacyListModule as MatListModule} from '@angular/material/legacy-list';
+import {MatLegacyTableModule as MatTableModule} from '@angular/material/legacy-table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {AngularFireModule} from '@angular/fire';
 
