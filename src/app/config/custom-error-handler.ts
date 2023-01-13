@@ -16,7 +16,7 @@ export class CustomErrorHandler extends ErrorHandler {
 	}
 
 
-	public handleError(error: any): void {
+	public handleError(error: {message: string, stack: string}): void {
 		super.handleError(error);
 
 		const newError = {

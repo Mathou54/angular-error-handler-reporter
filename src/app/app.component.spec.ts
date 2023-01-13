@@ -1,24 +1,28 @@
-import {async, TestBed} from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import * as firebase from 'firebase';
 import {AppComponent} from './app.component';
+import {provideFirebaseApp} from '@angular/fire/app';
+import {AngularFireAnalytics} from '@angular/fire/compat/analytics';
 
 describe('AppComponent', () => {
-	beforeEach(async(() => {
-		firebase.initializeApp({
-			projectId: 'test-projectId',
-			apiKey: 'test-apiKey',
-			appId: 'test-appId',
-			measurementId: 'test-measurementId'
-		});
+	let mockAngularFireAnalytics: AngularFireAnalytics;
+
+	beforeEach(waitForAsync(() => {
+		mockAngularFireAnalytics = jasmine.createSpyObj('AngularFireAnalytics', ['logEvent']);
 
 		TestBed.configureTestingModule({
 			imports: [
-				RouterTestingModule
+				RouterTestingModule,
+				provideFirebaseApp(() => initializeTestApp({
+					projectId: 'test-projectId'
+				})),
 			],
 			declarations: [
 				AppComponent
 			],
+			providers: [
+				{provide: AngularFireAnalytics, useValue: mockAngularFireAnalytics},
+			]
 		}).compileComponents();
 	}));
 
@@ -28,3 +32,7 @@ describe('AppComponent', () => {
 		expect(app).toBeTruthy();
 	});
 });
+function initializeTestApp(arg0: { projectId: string; }): import("@firebase/app").FirebaseApp {
+    throw new Error('Function not implemented.');
+}
+
